@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisata Air Terjun C2</title>
+    <style>
+        /* CSS */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: #0066cc;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        header nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-top: 1rem;
+        }
+        
+        header nav ul li {
+            margin: 0 1rem;
+        }
+        
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .hero {
+            background: url('https://cdn-2.tstatic.net/bangka/foto/bank/images/air-terjun-bukit-pading-c2.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .hero button {
+            background: #ff9900;
+            border: none;
+            padding: 0.5rem 1rem;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        section {
+            padding: 2rem;
+        }
+        
+        #about,
+        #contact {
+            background: #f4f4f4;
+        }
+        
+        .gallery {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .gallery img {
+            width: 300px;
+            border-radius: 10px;
+        }
+        
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        form input,
+        form textarea,
+        form button {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            background: #0066cc;
+            color: #fff;
+            padding: 1rem 0;
+        }
+        
+        .btn-link {
+            background-color: #4CAF50;
+            /* Warna latar belakang tombol */
+            color: white;
+            /* Warna teks tombol */
+            padding: 4px 20px;
+            /* Jarak di dalam tombol */
+            text-align: center;
+            /* Posisi teks di tengah */
+            text-decoration: none;
+            /* Menghapus garis bawah pada link */
+            display: inline-block;
+            /* Membuat tombol dapat diatur secara inline */
+            border-radius: 5px;
+            /* Membuat sudut tombol menjadi melengkung */
+            font-size: 16px;
+            /* Ukuran teks */
+        }
+        
+        .btn-link:hover {
+            background-color: #45a049;
+            /* Warna tombol saat dihover */
+        }
+        
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .card {
+            position: relative;
+            width: 300px;
+            background: rgb(255, 255, 255);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.615);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card img {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            height: auto;
+            z-index: 1;
+        }
+        
+        .card-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+        
+        .card-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #fff0f0;
+        }
+        
+        .card-description {
+            font-size: 1em;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="C@" />
+<link rel="manifest" href="/site.webmanifest" />
+
+<body>
+    <!-- HTML -->
+    <header>
+        <h1>Wisata Air Terjun C2</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#gallery">Galeri</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h2>Selamat Datang di Wisata Air Terjun C2</h2>
+        <p>Keindahan alam yang memukau dan suasana yang menenangkan.</p>
+
+
+        <!-- Tombol dengan link -->
+        <a href="https://www.google.com/maps/place/9H95%2B3M2+Wisata+Alam+Air+Terjun+C2+Lubuk+Pabrik,+Lubuk+Pabrik,+Koba,+Kabupaten+Bangka+Tengah,+Kepulauan+Bangka+Belitung+33681/@-2.63236,106.5591424,17z/data=!4m6!3m5!1s0x2e17e19bc97eab67:0x2d224b7e189b93d3!8m2!3d-2.63236!4d106.5591424!16s%2Fg%2F11k27htsr0"
+            class="btn-link" target="_blank">Cek Lokasi</a>
+
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>Tentang Air Terjun C2</h2>
+        <img src="https://cdn-2.tstatic.net/bangka/foto/bank/images/agus-santoso-sekretaris-desa.jpg" alt="Air Terjun C2" style="max-width: 100%; height: auto; border-radius: 10px;">
+        <p>
+            Kami sangat bersyukur dengan ragam potensi alam yang dimiliki desa kami. Dengan adanya potensi alam tersebut dapat menjadi sumber penghasilan asli desa dan masyarakat dengan pengelolahan yang baik."
+            <strong>Agus Santoso</strong> - Sekretaris Desa. Desa Lubuk Pabrik menjadi salah satu desa pemekaran di wilayah Lubuk Besar yang terbentuk sejak tahun 2006. Secara umum, Desa Lubuk Pabrik berbatasan dengan beberapa wilayah, sebelah utara dan
+            timur berbatasan dengan Lubuk Besar, sebelah barat berbatasan dengan Lubuk Lingkuk, dan sebelah selatan berbatasan dengan Desa Tepus, Kabupaten Bangka Selatan.
+        </p>
+    </section>
+
+    <section id="about">
+        <p>
+            Desa Lubuk Pabrik memiliki luas wilayah sekitar 600.045, 32 hektare, total jumlah penduduk Desa Lubuk Pabrik yaitu 4.393 jiwa, terdiri dari 2.092 perempuan dan 2.301 laki-laki dengan total kepala keluarga (KK) yaitu 1.355 dengan keberagaman suku ataupun
+            ras yang terdiri dari Jawa, Sunda, Flores, Melayu, serta Buton atupun Bugis Desa Lubuk Pabrik memiliki potensi alam dan berbagai produk unggulan desa yang menjadi daya pikat sekaligus sebagai mata penghasilan masyarakat. Potensi wisata alam
+            Air Terjun C2 yang berada di Desa Lubuk Pabrik ini menyimpan keindahan alam nan eksotis yang dikelola oleh pihak desa dan masyarakat setempat. Wisata alam hutan lindung yang dikelola pihak Desa ini resmi mendapat izin langsung dari instansi
+            tekait seperti Dinas Lingkungan Hidup, Lembaga Pengelolah Hutan Lindung. Pengembangan lokasi wisata tetap mengutamakan keaslian dan keasrian hutan.
+        </p>
+    </section>
+
+    <section id="gallery">
+        <h2 style="text-align: center; margin-bottom: 2rem;">Galeri Wisata Dan Fasilitas</h2>
+        <div class="card-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="https://asset-2.tstatic.net/bangka/foto/bank/images/air-terjun-bukit-pading-c2.jpg" alt="Gambar Air Terjun">
+                <div class="card-content">
+                    <h3 class="card-title">Air Terjun Utama</h3>
+                    <p class="card-description">Air terjun yang megah dengan pemandangan spektakuler.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="https://asset-2.tstatic.net/bangka/foto/bank/images/20220412-air-terjun1.jpg" alt="Gambar Kolam Alami">
+                <div class="card-content">
+                    <h3 class="card-title">Kolam Alami</h3>
+                    <p class="card-description">Kolam yang menyegarkan dengan air jernih.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipOe7KXpH7h48mQy497bZ58CoC3TGQ0CS_y1EabF=s680-w680-h510" alt="Gambar Pemandangan Hutan">
+                <div class="card-content">
+                    <h3 class="card-title">Pemandangan Hutan</h3>
+                    <p class="card-description">Hutan hijau yang menyegarkan mata dan jiwa.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipMNRy0TIKSjhi5beER4P4KtJ3jbjilh4Ejr_CWZ=s680-w680-h510" alt="Gambar Kolam Alami">
+                <div class="card-content">
+                    <h3 class="card-title">Fasilitas Toilet</h3>
+                    <p class="card-description">Toilet Yang bersih Dan Nyaman.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipMncMi_EE3eI1a-B_UN_RzXvbmQeISxSMFdXd6s=s680-w680-h510" alt="Gambar Kolam Alami">
+                <div class="card-content">
+                    <h3 class="card-title">Fasilitas Gazebo</h3>
+                    <p class="card-description">Gazebo Yang Luas Dan Nyaman.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipOyqCLUU_Tp7_gIL4FXzAFUkMvt0nshy-ocL2T4=s680-w680-h510" alt="Gambar Kolam Alami">
+                <div class="card-content">
+                    <h3 class="card-title">Peta Alur</h3>
+                    <p class="card-description">7 Tingkat Air Terjun.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://infopromodiskon.com/userfiles/uploads/air-terjun-gunung-pading-desa-mayang---bangka-selatan-6.jpg" alt="Gambar Kolam Alami">
+                <div class="card-content">
+                    <h3 class="card-title">Air Terjun tertinggi</h3>
+                    <p class="card-description">Tingkat 7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Kontak Kami</h2>
+        <form id="contactForm">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Kirim</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Wisata Air Terjun C2. Semua Hak Dilindungi. dev by Elnathan</p>
+    </footer>
+
+    <script>
+        // JavaScript
+        document.getElementById('exploreBtn').addEventListener('click', function() {
+            window.scrollTo({
+                top: document.getElementById('about').offsetTop,
+                behavior: 'smooth'
+            });
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Terima kasih telah menghubungi kami! Pesan Anda telah terkirim.');
+            this.reset();
+        });
+
+        function moveLocation() {
+            // Ambil elemen dengan kelas "location-icon"
+            const locationIcon = document.querySelector('.location-icon');
+
+            // Tentukan posisi baru secara acak di dalam layar
+            const maxWidth = window.innerWidth;
+            const maxHeight = window.innerHeight;
+
+            const randomX = Math.random() * maxWidth;
+            const randomY = Math.random() * maxHeight;
+
+            // Pindahkan lokasi ke posisi acak
+            locationIcon.style.left = `${randomX}px`;
+            locationIcon.style.top = `${randomY}px`;
+        }
+    </script>
+</body>
+
+</html>
