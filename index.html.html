@@ -5,342 +5,1758 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wisata Air Terjun C2</title>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="C2" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <style>
-        /* CSS */
-        
+        :root {
+            --forest-dark: #0a1f0a;
+            --forest-deep: #0f2e0f;
+            --forest-mid: #1a4a1a;
+            --forest-light: #2d6a2d;
+            --leaf-green: #4ade80;
+            --leaf-muted: #22c55e;
+            --water-blue: #38bdf8;
+            --water-deep: #0284c7;
+            --earth-brown: #92400e;
+            --earth-light: #d97706;
+            --moss: #365314;
+            --mist: rgba(255, 255, 255, 0.06);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-primary: #f0fdf4;
+            --text-secondary: rgba(240, 253, 244, 0.7);
+            --text-muted: rgba(240, 253, 244, 0.4);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            background: var(--forest-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
         }
-        
-        header {
-            background: #0066cc;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-        }
-        
-        header nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            margin-top: 1rem;
-        }
-        
-        header nav ul li {
-            margin: 0 1rem;
-        }
-        
-        header nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-        
-        .hero {
-            background: url('https://cdn-2.tstatic.net/bangka/foto/bank/images/air-terjun-bukit-pading-c2.jpg') no-repeat center center/cover;
-            color: #fff;
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-        
-        .hero button {
-            background: #ff9900;
-            border: none;
-            padding: 0.5rem 1rem;
-            color: #fff;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        
-        section {
-            padding: 2rem;
-        }
-        
-        #about,
-        #contact {
-            background: #f4f4f4;
-        }
-        
-        .gallery {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .gallery img {
-            width: 300px;
-            border-radius: 10px;
-        }
-        
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        form input,
-        form textarea,
-        form button {
-            padding: 0.5rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        
-        footer {
-            text-align: center;
-            background: #0066cc;
-            color: #fff;
-            padding: 1rem 0;
-        }
-        
-        .btn-link {
-            background-color: #4CAF50;
-            /* Warna latar belakang tombol */
-            color: white;
-            /* Warna teks tombol */
-            padding: 4px 20px;
-            /* Jarak di dalam tombol */
-            text-align: center;
-            /* Posisi teks di tengah */
-            text-decoration: none;
-            /* Menghapus garis bawah pada link */
-            display: inline-block;
-            /* Membuat tombol dapat diatur secara inline */
-            border-radius: 5px;
-            /* Membuat sudut tombol menjadi melengkung */
-            font-size: 16px;
-            /* Ukuran teks */
-        }
-        
-        .btn-link:hover {
-            background-color: #45a049;
-            /* Warna tombol saat dihover */
-        }
-        
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        
-        .card {
-            position: relative;
-            width: 300px;
-            background: rgb(255, 255, 255);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.615);
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        
-        .card img {
-            position: absolute;
-            top: -50px;
+
+        /* ========== SCROLLBAR ========== */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--forest-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--forest-light); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--leaf-green); }
+
+        /* ========== NAVBAR ========== */
+        .navbar {
+            position: fixed;
+            top: 16px;
             left: 50%;
             transform: translateX(-50%);
-            width: 120%;
-            height: auto;
+            z-index: 1000;
+            background: rgba(10, 31, 10, 0.75);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            border-radius: 9999px;
+            padding: 8px 8px 8px 24px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 31, 10, 0.92);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255,255,255,0.08);
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--leaf-green);
+            text-decoration: none;
+            margin-right: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .nav-logo .iconify {
+            font-size: 1.4rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text-primary);
+            background: rgba(74, 222, 128, 0.1);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--leaf-green), var(--leaf-muted)) !important;
+            color: var(--forest-dark) !important;
+            font-weight: 600 !important;
+            padding: 8px 20px !important;
+            box-shadow: 0 4px 15px rgba(74, 222, 128, 0.3);
+        }
+
+        .nav-cta:hover {
+            box-shadow: 0 4px 25px rgba(74, 222, 128, 0.5) !important;
+            transform: translateY(-1px);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('https://cdn-2.tstatic.net/bangka/foto/bank/images/air-terjun-bukit-pading-c2.jpg') no-repeat center center/cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(10, 31, 10, 0.5) 0%,
+                rgba(10, 31, 10, 0.7) 40%,
+                rgba(10, 31, 10, 0.95) 100%
+            );
             z-index: 1;
         }
-        
-        .card-content {
-            position: relative;
+
+        .hero-mist {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(to top, var(--forest-dark), transparent);
             z-index: 2;
-            padding: 20px;
         }
-        
-        .card-title {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #fff0f0;
+
+        .hero-particles {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            pointer-events: none;
+            overflow: hidden;
         }
-        
-        .card-description {
-            font-size: 1em;
-            color: #ffffff;
+
+        .leaf {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--leaf-green);
+            opacity: 0;
+            border-radius: 0 50% 50% 50%;
+            transform: rotate(45deg);
+            animation: fallLeaf linear infinite;
+        }
+
+        @keyframes fallLeaf {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px) rotate(0deg) scale(0.5);
+            }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.3; }
+            100% {
+                opacity: 0;
+                transform: translateY(100vh) rotate(720deg) scale(0.2);
+            }
+        }
+
+        .water-drop {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: var(--water-blue);
+            border-radius: 50%;
+            opacity: 0;
+            animation: dropFall linear infinite;
+        }
+
+        @keyframes dropFall {
+            0% { opacity: 0; transform: translateY(0) scale(1); }
+            10% { opacity: 0.8; }
+            100% { opacity: 0; transform: translateY(60vh) scale(0.3); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(74, 222, 128, 0.1);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+            border-radius: 9999px;
+            padding: 6px 18px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--leaf-green);
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            animation: fadeUp 0.8s ease-out;
+        }
+
+        .hero-badge .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--leaf-green);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4); }
+            50% { opacity: 0.7; box-shadow: 0 0 0 8px rgba(74, 222, 128, 0); }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.8s ease-out 0.15s both;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--leaf-green), var(--water-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            animation: fadeUp 0.8s ease-out 0.3s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 0.8s ease-out 0.45s both;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--leaf-green), var(--leaf-muted));
+            color: var(--forest-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 14px 32px;
+            border-radius: 9999px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(74, 222, 128, 0.3);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 8px 40px rgba(74, 222, 128, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--glass-bg);
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 14px 32px;
+            border-radius: 9999px;
+            text-decoration: none;
+            border: 1px solid var(--glass-border);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            animation: floatUp 2s ease-in-out infinite;
+        }
+
+        @keyframes floatUp {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-8px); }
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--leaf-green), transparent);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ========== STATS BAR ========== */
+        .stats-bar {
+            position: relative;
+            z-index: 10;
+            margin-top: -60px;
+            padding: 0 2rem;
+        }
+
+        .stats-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .stat-item {
+            background: rgba(15, 46, 15, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: rgba(15, 46, 15, 1);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--leaf-green);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* ========== SECTION COMMON ========== */
+        section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--leaf-green);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 1rem;
+        }
+
+        .section-label .line {
+            width: 30px;
+            height: 1px;
+            background: var(--leaf-green);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ========== ABOUT ========== */
+        #about {
+            background: linear-gradient(180deg, var(--forest-dark) 0%, var(--forest-deep) 50%, var(--forest-dark) 100%);
+        }
+
+        .about-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image-wrapper img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            transition: transform 0.5s ease;
+        }
+
+        .about-image-wrapper:hover img {
+            transform: scale(1.02);
+        }
+
+        .about-image-frame {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: 15px;
+            bottom: 15px;
+            border: 2px solid var(--leaf-green);
+            border-radius: 24px;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .about-image-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: linear-gradient(135deg, var(--leaf-green), var(--leaf-muted));
+            color: var(--forest-dark);
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 16px 24px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(74, 222, 128, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .about-text h3 .green {
+            color: var(--leaf-green);
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .about-text blockquote {
+            border-left: 3px solid var(--leaf-green);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .about-text blockquote cite {
+            display: block;
+            margin-top: 0.5rem;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--leaf-green);
+            font-size: 0.9rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            background: var(--mist);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .about-feature:hover {
+            background: rgba(74, 222, 128, 0.08);
+            border-color: rgba(74, 222, 128, 0.2);
+        }
+
+        .about-feature .iconify {
+            color: var(--leaf-green);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        /* ========== ABOUT SECOND ========== */
+        .about-second {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-second.reverse {
+            direction: rtl;
+        }
+
+        .about-second.reverse > * {
+            direction: ltr;
+        }
+
+        .info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .info-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(74, 222, 128, 0.2);
+            transform: translateX(5px);
+        }
+
+        .info-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0.75rem;
+        }
+
+        .info-card-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, rgba(74, 222, 128, 0.15), rgba(56, 189, 248, 0.1));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--leaf-green);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .info-card-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .info-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* ========== GALLERY ========== */
+        #gallery {
+            background: linear-gradient(180deg, var(--forest-dark), var(--forest-deep), var(--forest-dark));
+        }
+
+        .gallery-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+            group: true;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(74, 222, 128, 0.08);
+            border-color: rgba(74, 222, 128, 0.2);
+        }
+
+        .gallery-card-img {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .gallery-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .gallery-card:hover .gallery-card-img img {
+            transform: scale(1.1);
+        }
+
+        .gallery-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10, 31, 10, 0.9) 0%, transparent 60%);
+        }
+
+        .gallery-card-tag {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(10, 31, 10, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            color: var(--leaf-green);
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 5px 12px;
+            border-radius: 9999px;
+        }
+
+        .gallery-card-body {
+            padding: 1.5rem;
+        }
+
+        .gallery-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-card-desc {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        .gallery-card-footer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .gallery-card-footer .iconify {
+            color: var(--leaf-green);
+        }
+
+        .gallery-card-footer span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* ========== LIGHTBOX ========== */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            cursor: pointer;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 16px;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* ========== CONTACT ========== */
+        #contact {
+            background: linear-gradient(180deg, var(--forest-dark), var(--forest-deep));
+        }
+
+        .contact-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info > p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-detail-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(74, 222, 128, 0.1);
+            border: 1px solid rgba(74, 222, 128, 0.15);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--leaf-green);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-detail-text strong {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+
+        .contact-detail-text span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .contact-socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 2rem;
+        }
+
+        .social-btn {
+            width: 44px;
+            height: 44px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: rgba(74, 222, 128, 0.15);
+            border-color: rgba(74, 222, 128, 0.3);
+            color: var(--leaf-green);
+            transform: translateY(-3px);
+        }
+
+        .contact-form-wrapper {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            backdrop-filter: blur(20px);
+        }
+
+        .contact-form-wrapper h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 14px 18px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--leaf-green);
+            box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.1);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--leaf-green), var(--leaf-muted));
+            color: var(--forest-dark);
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 20px rgba(74, 222, 128, 0.3);
+        }
+
+        .form-submit:hover {
+            box-shadow: 0 8px 40px rgba(74, 222, 128, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* ========== TOAST ========== */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 10000;
+            background: linear-gradient(135deg, var(--forest-mid), var(--forest-deep));
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            color: var(--text-primary);
+            padding: 16px 24px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            transform: translateY(120%);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-size: 0.9rem;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+        }
+
+        .toast .iconify {
+            color: var(--leaf-green);
+            font-size: 1.4rem;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            position: relative;
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--glass-border);
+            background: var(--forest-dark);
+        }
+
+        footer .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--leaf-green);
+            margin-bottom: 0.75rem;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        footer .dev {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        footer .dev a {
+            color: var(--leaf-green);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        footer .dev a:hover {
+            opacity: 0.7;
+        }
+
+        /* ========== REVEAL ANIMATION ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+        .reveal-delay-6 { transition-delay: 0.6s; }
+
+        /* ========== AMBIENT GLOW ========== */
+        .ambient-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-green {
+            background: var(--leaf-green);
+        }
+
+        .glow-blue {
+            background: var(--water-blue);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .about-grid,
+            .about-second,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .about-second.reverse {
+                direction: ltr;
+            }
+
+            .stats-inner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                width: calc(100% - 32px);
+                padding: 8px 12px;
+                justify-content: space-between;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: rgba(10, 31, 10, 0.95);
+                backdrop-filter: blur(20px);
+                border-radius: 16px;
+                padding: 16px;
+                flex-direction: column;
+                border: 1px solid var(--glass-border);
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 12px 16px;
+                width: 100%;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .stats-inner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-number {
+                font-size: 1.6rem;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 4rem 1.25rem;
+            }
+
+            .contact-form-wrapper {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-buttons a {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
         }
     </style>
 </head>
-<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="C@" />
-<link rel="manifest" href="/site.webmanifest" />
 
 <body>
-    <!-- HTML -->
-    <header>
-        <h1>Wisata Air Terjun C2</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Beranda</a></li>
-                <li><a href="#about">Tentang</a></li>
-                <li><a href="#gallery">Galeri</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <a href="#home" class="nav-logo">
+            <span class="iconify" data-icon="mdi:waterfall"></span>
+            C2 Waterfall
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="active">Beranda</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#gallery">Galeri</a></li>
+            <li><a href="#contact">Kontak</a></li>
+            <li><a href="https://www.google.com/maps/place/9H95%2B3M2+Wisata+Alam+Air+Terjun+C2+Lubuk+Pabrik,+Lubuk+Pabrik,+Koba,+Kabupaten+Bangka+Tengah,+Kepulauan+Bangka+Belitung+33681/@-2.63236,106.5591424,17z/data=!4m6!3m5!1s0x2e17e19bc97eab67:0x2d224b7e189b93d3!8m2!3d-2.63236!4d106.5591424!16s%2Fg%2F11k27htsr0" target="_blank" class="nav-cta">
+                <span class="iconify" data-icon="mdi:map-marker" style="font-size:1rem"></span> Lokasi
+            </a></li>
+        </ul>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+            <span class="iconify" data-icon="mdi:menu"></span>
+        </button>
+    </nav>
 
+    <!-- HERO -->
     <section id="home" class="hero">
-        <h2>Selamat Datang di Wisata Air Terjun C2</h2>
-        <p>Keindahan alam yang memukau dan suasana yang menenangkan.</p>
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-mist"></div>
+        <div class="hero-particles" id="heroParticles"></div>
 
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                Buka untuk Pengunjung
+            </div>
+            <h1>Wisata Air Terjun <span class="highlight">C2</span></h1>
+            <p>Keindahan alam yang memukau di Desa Lubuk Pabrik — 7 tingkat air terjun yang menakjubkan di tengah hutan lindung Bangka.</p>
+            <div class="hero-buttons">
+                <a href="#gallery" class="btn-primary">
+                    <span class="iconify" data-icon="mdi:image-multiple"></span>
+                    Jelajahi Galeri
+                </a>
+                <a href="https://www.google.com/maps/place/9H95%2B3M2+Wisata+Alam+Air+Terjun+C2+Lubuk+Pabrik,+Lubuk+Pabrik,+Koba,+Kabupaten+Bangka+Tengah,+Kepulauan+Bangka+Belitung+33681/@-2.63236,106.5591424,17z/data=!4m6!3m5!1s0x2e17e19bc97eab67:0x2d224b7e189b93d3!8m2!3d-2.63236!4d106.5591424!16s%2Fg%2F11k27htsr0" target="_blank" class="btn-secondary">
+                    <span class="iconify" data-icon="mdi:map-marker-outline"></span>
+                    Cek Lokasi
+                </a>
+            </div>
+        </div>
 
-        <!-- Tombol dengan link -->
-        <a href="https://www.google.com/maps/place/9H95%2B3M2+Wisata+Alam+Air+Terjun+C2+Lubuk+Pabrik,+Lubuk+Pabrik,+Koba,+Kabupaten+Bangka+Tengah,+Kepulauan+Bangka+Belitung+33681/@-2.63236,106.5591424,17z/data=!4m6!3m5!1s0x2e17e19bc97eab67:0x2d224b7e189b93d3!8m2!3d-2.63236!4d106.5591424!16s%2Fg%2F11k27htsr0"
-            class="btn-link" target="_blank">Cek Lokasi</a>
-
+        <div class="hero-scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
         </div>
     </section>
 
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+        <div class="stats-inner reveal">
+            <div class="stat-item">
+                <div class="stat-number" data-count="7">0</div>
+                <div class="stat-label">Tingkat Air Terjun</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="600" data-suffix="+">0</div>
+                <div class="stat-label">Hektar Hutan Lindung</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="4393">0</div>
+                <div class="stat-label">Jiwa Penduduk</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="2006">0</div>
+                <div class="stat-label">Desa Pemekaran</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT 1 -->
     <section id="about">
-        <h2>Tentang Air Terjun C2</h2>
-        <img src="https://cdn-2.tstatic.net/bangka/foto/bank/images/agus-santoso-sekretaris-desa.jpg" alt="Air Terjun C2" style="max-width: 100%; height: auto; border-radius: 10px;">
-        <p>
-            Kami sangat bersyukur dengan ragam potensi alam yang dimiliki desa kami. Dengan adanya potensi alam tersebut dapat menjadi sumber penghasilan asli desa dan masyarakat dengan pengelolahan yang baik."
-            <strong>Agus Santoso</strong> - Sekretaris Desa. Desa Lubuk Pabrik menjadi salah satu desa pemekaran di wilayah Lubuk Besar yang terbentuk sejak tahun 2006. Secara umum, Desa Lubuk Pabrik berbatasan dengan beberapa wilayah, sebelah utara dan
-            timur berbatasan dengan Lubuk Besar, sebelah barat berbatasan dengan Lubuk Lingkuk, dan sebelah selatan berbatasan dengan Desa Tepus, Kabupaten Bangka Selatan.
-        </p>
+        <div class="ambient-glow glow-green" style="top: 10%; left: -10%;"></div>
+        <div class="ambient-glow glow-blue" style="bottom: 10%; right: -10%;"></div>
+
+        <div class="section-header reveal">
+            <div class="section-label">
+                <span class="line"></span>
+                Tentang Kami
+                <span class="line"></span>
+            </div>
+            <h2 class="section-title">Pesona Tersembunyi<br>di Hutan Bangka</h2>
+            <p class="section-desc">Potensi alam yang dikelola dengan menjaga keasrian dan keaslian hutan lindung.</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-image-wrapper reveal reveal-delay-1">
+                <img src="https://cdn-2.tstatic.net/bangka/foto/bank/images/agus-santoso-sekretaris-desa.jpg" alt="Air Terjun C2">
+                <div class="about-image-frame"></div>
+                <div class="about-image-badge">
+                    <span class="iconify" data-icon="mdi:shield-check"></span>
+                    Hutan Lindung
+                </div>
+            </div>
+            <div class="about-text reveal reveal-delay-2">
+                <h3>Desa Lubuk Pabrik, Rumah bagi <span class="green">Air Terjun C2</span></h3>
+                <p>Desa Lubuk Pabrik menjadi salah satu desa pemekaran di wilayah Lubuk Besar yang terbentuk sejak tahun 2006. Secara umum, desa ini berbatasan dengan beberapa wilayah — sebelah utara dan timur berbatasan dengan Lubuk Besar, sebelah barat berbatasan dengan Lubuk Lingkuk, dan sebelah selatan berbatasan dengan Desa Tepus, Kabupaten Bangka Selatan.</p>
+                <blockquote>
+                    "Kami sangat bersyukur dengan ragam potensi alam yang dimiliki desa kami. Dengan adanya potensi alam tersebut dapat menjadi sumber penghasilan asli desa dan masyarakat dengan pengelolaan yang baik."
+                    <cite>— Agus Santoso, Sekretaris Desa</cite>
+                </blockquote>
+                <div class="about-features">
+                    <div class="about-feature">
+                        <span class="iconify" data-icon="mdi:check-decagram"></span>
+                        Izin Resmi Dinas LH
+                    </div>
+                    <div class="about-feature">
+                        <span class="iconify" data-icon="mdi:check-decagram"></span>
+                        Dikelola Pihak Desa
+                    </div>
+                    <div class="about-feature">
+                        <span class="iconify" data-icon="mdi:check-decagram"></span>
+                        Hutan Lindung Terjaga
+                    </div>
+                    <div class="about-feature">
+                        <span class="iconify" data-icon="mdi:check-decagram"></span>
+                    7 Tingkat Air Terjun
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="about">
-        <p>
-            Desa Lubuk Pabrik memiliki luas wilayah sekitar 600.045, 32 hektare, total jumlah penduduk Desa Lubuk Pabrik yaitu 4.393 jiwa, terdiri dari 2.092 perempuan dan 2.301 laki-laki dengan total kepala keluarga (KK) yaitu 1.355 dengan keberagaman suku ataupun
-            ras yang terdiri dari Jawa, Sunda, Flores, Melayu, serta Buton atupun Bugis Desa Lubuk Pabrik memiliki potensi alam dan berbagai produk unggulan desa yang menjadi daya pikat sekaligus sebagai mata penghasilan masyarakat. Potensi wisata alam
-            Air Terjun C2 yang berada di Desa Lubuk Pabrik ini menyimpan keindahan alam nan eksotis yang dikelola oleh pihak desa dan masyarakat setempat. Wisata alam hutan lindung yang dikelola pihak Desa ini resmi mendapat izin langsung dari instansi
-            tekait seperti Dinas Lingkungan Hidup, Lembaga Pengelolah Hutan Lindung. Pengembangan lokasi wisata tetap mengutamakan keaslian dan keasrian hutan.
-        </p>
+    <!-- ABOUT 2 -->
+    <section style="padding-top: 0;">
+        <div class="about-second reveal">
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <div class="info-card-icon">
+                            <span class="iconify" data-icon="mdi:map-marker-radius"></span>
+                        </div>
+                        <div class="info-card-title">Luas Wilayah</div>
+                    </div>
+                    <p>Desa Lubuk Pabrik memiliki luas wilayah sekitar 600.045,32 hektare yang membentang dengan keindahan alam yang luar biasa.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <div class="info-card-icon">
+                            <span class="iconify" data-icon="mdi:account-group"></span>
+                        </div>
+                        <div class="info-card-title">Demografi</div>
+                    </div>
+                    <p>Total penduduk 4.393 jiwa — terdiri dari 2.092 perempuan dan 2.301 laki-laki dengan total 1.355 kepala keluarga.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <div class="info-card-icon">
+                            <span class="iconify" data-icon="mdi:earth"></span>
+                        </div>
+                        <div class="info-card-title">Keberagaman</div>
+                    </div>
+                    <p>Terdiri dari berbagai suku — Jawa, Sunda, Flores, Melayu, Buton, dan Bugis yang hidup harmonis.</p>
+                </div>
+            </div>
+            <div>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1.5rem; line-height: 1.3;">Pengelolaan yang <span style="color: var(--leaf-green);">Berkelanjutan</span></h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    Wisata alam Air Terjun C2 yang berada di Desa Lubuk Pabrik menyimpan keindahan alam nan eksotis yang dikelola oleh pihak desa dan masyarakat setempat. Sebagai wisata alam hutan lindung, lokasi ini resmi mendapat izin langsung dari instansi terkait seperti Dinas Lingkungan Hidup dan Lembaga Pengelola Hutan Lindung.
+                </p>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                    Pengembangan lokasi wisata tetap mengutamakan keaslian dan keasrian hutan. Setiap fasilitas dibangun dengan memperhatikan kelestarian lingkungan, memastikan generasi mendatang juga dapat menikmati keindahan alam ini.
+                </p>
+            </div>
+        </div>
     </section>
 
+    <!-- GALLERY -->
     <section id="gallery">
-        <h2 style="text-align: center; margin-bottom: 2rem;">Galeri Wisata Dan Fasilitas</h2>
-        <div class="card-container">
-            <!-- Card 1 -->
-            <div class="card">
-                <img src="https://asset-2.tstatic.net/bangka/foto/bank/images/air-terjun-bukit-pading-c2.jpg" alt="Gambar Air Terjun">
-                <div class="card-content">
-                    <h3 class="card-title">Air Terjun Utama</h3>
-                    <p class="card-description">Air terjun yang megah dengan pemandangan spektakuler.</p>
+        <div class="ambient-glow glow-green" style="top: 20%; right: -15%;"></div>
+
+        <div class="section-header reveal">
+            <div class="section-label">
+                <span class="line"></span>
+                Galeri
+                <span class="line"></span>
+            </div>
+            <h2 class="section-title">Keindahan & Fasilitas</h2>
+            <p class="section-desc">Jelajahi pesona 7 tingkat air terjun dan fasilitas yang tersedia untuk kenyamanan pengunjung.</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-card reveal reveal-delay-1" onclick="openLightbox(this)">
+                <div class="gallery-card-img">
+                    <img src="https://asset-2.tstatic.net/bangka/foto/bank/images/air-terjun-bukit-pading-c2.jpg" alt="Air Terjun Utama">
+                    <div class="gallery-card-overlay"></div>
+                    <span class="gallery-card-tag">Wisata Alam</span>
+                </div>
+                <div class="gallery-card-body">
+                    <h3 class="gallery-card-title">Air Terjun Utama</h3>
+                    <p class="gallery-card-desc">Air terjun yang megah dengan pemandangan spektakuler dan suara gemuruh air yang menenangkan.</p>
+                    <div class="gallery-card-footer">
+                        <span class="iconify" data-icon="mdi:water"></span>
+                        <span>Tingkat 1 — Pintu Masuk</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Card 2 -->
-            <div class="card">
-                <img src="https://asset-2.tstatic.net/bangka/foto/bank/images/20220412-air-terjun1.jpg" alt="Gambar Kolam Alami">
-                <div class="card-content">
-                    <h3 class="card-title">Kolam Alami</h3>
-                    <p class="card-description">Kolam yang menyegarkan dengan air jernih.</p>
+            <div class="gallery-card reveal reveal-delay-2" onclick="openLightbox(this)">
+                <div class="gallery-card-img">
+                    <img src="https://asset-2.tstatic.net/bangka/foto/bank/images/20220412-air-terjun1.jpg" alt="Kolam Alami">
+                    <div class="gallery-card-overlay"></div>
+                    <span class="gallery-card-tag">Kolam</span>
+                </div>
+                <div class="gallery-card-body">
+                    <h3 class="gallery-card-title">Kolam Alami</h3>
+                    <p class="gallery-card-desc">Kolam yang menyegarkan dengan air jernih, sempurna untuk berenang dan bersantai.</p>
+                    <div class="gallery-card-footer">
+                        <span class="iconify" data-icon="mdi:swim"></span>
+                        <span>Air Jernih Alami</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Card 3 -->
-            <div class="card">
-                <img src="https://lh3.googleusercontent.com/p/AF1QipOe7KXpH7h48mQy497bZ58CoC3TGQ0CS_y1EabF=s680-w680-h510" alt="Gambar Pemandangan Hutan">
-                <div class="card-content">
-                    <h3 class="card-title">Pemandangan Hutan</h3>
-                    <p class="card-description">Hutan hijau yang menyegarkan mata dan jiwa.</p>
+            <div class="gallery-card reveal reveal-delay-3" onclick="openLightbox(this)">
+                <div class="gallery-card-img">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipOe7KXpH7h48mQy497bZ58CoC3TGQ0CS_y1EabF=s680-w680-h510" alt="Pemandangan Hutan">
+                    <div class="gallery-card-overlay"></div>
+                    <span class="gallery-card-tag">Hutan</span>
+                </div>
+                <div class="gallery-card-body">
+                    <h3 class="gallery-card-title">Pemandangan Hutan</h3>
+                    <p class="gallery-card-desc">Hutan hijau yang menyegarkan mata dan jiwa, dengan jalur trekking yang menantang.</p>
+                    <div class="gallery-card-footer">
+                        <span class="iconify" data-icon="mdi:tree"></span>
+                        <span>Hutan Lindung</span>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <img src="https://lh3.googleusercontent.com/p/AF1QipMNRy0TIKSjhi5beER4P4KtJ3jbjilh4Ejr_CWZ=s680-w680-h510" alt="Gambar Kolam Alami">
-                <div class="card-content">
-                    <h3 class="card-title">Fasilitas Toilet</h3>
-                    <p class="card-description">Toilet Yang bersih Dan Nyaman.</p>
+
+            <div class="gallery-card reveal reveal-delay-4" onclick="openLightbox(this)">
+                <div class="gallery-card-img">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipMNRy0TIKSjhi5beER4P4KtJ3jbjilh4Ejr_CWZ=s680-w680-h510" alt="Fasilitas Toilet">
+                    <div class="gallery-card-overlay"></div>
+                    <span class="gallery-card-tag">Fasilitas</span>
+                </div>
+                <div class="gallery-card-body">
+                    <h3 class="gallery-card-title">Fasilitas Toilet</h3>
+                    <p class="gallery-card-desc">Toilet bersih dan nyaman yang terawat untuk kenyamanan seluruh pengunjung.</p>
+                    <div class="gallery-card-footer">
+                        <span class="iconify" data-icon="mdi:toilet"></span>
+                        <span>Bersih & Terawat</span>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <img src="https://lh3.googleusercontent.com/p/AF1QipMncMi_EE3eI1a-B_UN_RzXvbmQeISxSMFdXd6s=s680-w680-h510" alt="Gambar Kolam Alami">
-                <div class="card-content">
-                    <h3 class="card-title">Fasilitas Gazebo</h3>
-                    <p class="card-description">Gazebo Yang Luas Dan Nyaman.</p>
+
+            <div class="gallery-card reveal reveal-delay-5" onclick="openLightbox(this)">
+                <div class="gallery-card-img">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipMncMi_EE3eI1a-B_UN_RzXvbmQeISxSMFdXd6s=s680-w680-h510" alt="Fasilitas Gazebo">
+                    <div class="gallery-card-overlay"></div>
+                    <span class="gallery-card-tag">Fasilitas</span>
+                </div>
+                <div class="gallery-card-body">
+                    <h3 class="gallery-card-title">Fasilitas Gazebo</h3>
+                    <p class="gallery-card-desc">Gazebo luas dan nyaman untuk bersantai sambil menikmati suasana alam.</p>
+                    <div class="gallery-card-footer">
+                        <span class="iconify" data-icon="mdi:home-variant"></span>
+                        <span>Bersantai & Istirahat</span>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <img src="https://lh3.googleusercontent.com/p/AF1QipOyqCLUU_Tp7_gIL4FXzAFUkMvt0nshy-ocL2T4=s680-w680-h510" alt="Gambar Kolam Alami">
-                <div class="card-content">
-                    <h3 class="card-title">Peta Alur</h3>
-                    <p class="card-description">7 Tingkat Air Terjun.</p>
+
+            <div class="gallery-card reveal reveal-delay-6" onclick="openLightbox(this)">
+                <div class="gallery-card-img">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipOyqCLUU_Tp7_gIL4FXzAFUkMvt0nshy-ocL2T4=s680-w680-h510" alt="Peta Alur">
+                    <div class="gallery-card-overlay"></div>
+                    <span class="gallery-card-tag">Peta</span>
+                </div>
+                <div class="gallery-card-body">
+                    <h3 class="gallery-card-title">Peta Alur</h3>
+                    <p class="gallery-card-desc">Peta jalur 7 tingkat air terjun yang memudahkan perjalanan Anda.</p>
+                    <div class="gallery-card-footer">
+                        <span class="iconify" data-icon="mdi:map"></span>
+                        <span>7 Tingkat Air Terjun</span>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <img src="https://infopromodiskon.com/userfiles/uploads/air-terjun-gunung-pading-desa-mayang---bangka-selatan-6.jpg" alt="Gambar Kolam Alami">
-                <div class="card-content">
-                    <h3 class="card-title">Air Terjun tertinggi</h3>
-                    <p class="card-description">Tingkat 7.</p>
+
+            <div class="gallery-card reveal reveal-delay-3" onclick="openLightbox(this)">
+                <div class="gallery-card-img">
+                    <img src="https://infopromodiskon.com/userfiles/uploads/air-terjun-gunung-pading-desa-mayang---bangka-selatan-6.jpg" alt="Air Terjun Tertinggi">
+                    <div class="gallery-card-overlay"></div>
+                    <span class="gallery-card-tag">Puncak</span>
+                </div>
+                <div class="gallery-card-body">
+                    <h3 class="gallery-card-title">Air Terjun Tertinggi</h3>
+                    <p class="gallery-card-desc">Puncak tertinggi pada tingkat ke-7 — pemandangan paling dramatis dan memukau.</p>
+                    <div class="gallery-card-footer">
+                        <span class="iconify" data-icon="mdi:arrow-up-bold-circle"></span>
+                        <span>Tingkat 7 — Puncak</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact">
-        <h2>Kontak Kami</h2>
-        <form id="contactForm">
-            <label for="name">Nama:</label>
-            <input type="text" id="name" name="name" required>
+        <div class="ambient-glow glow-blue" style="top: 0; left: -10%;"></div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+        <div class="section-header reveal">
+            <div class="section-label">
+                <span class="line"></span>
+                Kontak
+                <span class="line"></span>
+            </div>
+            <h2 class="section-title">Hubungi Kami</h2>
+            <p class="section-desc">Punya pertanyaan atau ingin reservasi? Jangan ragu untuk menghubungi kami.</p>
+        </div>
 
-            <label for="message">Pesan:</label>
-            <textarea id="message" name="message" required></textarea>
+        <div class="contact-grid">
+            <div class="contact-info reveal reveal-delay-1">
+                <h3>Informasi Kontak</h3>
+                <p>Kami siap membantu Anda merencanakan kunjungan yang berkesan ke Air Terjun C2.</p>
 
-            <button type="submit">Kirim</button>
-        </form>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">
+                        <span class="iconify" data-icon="mdi:map-marker"></span>
+                    </div>
+                    <div class="contact-detail-text">
+                        <strong>Lokasi</strong>
+                        <span>Desa Lubuk Pabrik, Kec. Koba, Kab. Bangka Tengah, Kep. Bangka Belitung</span>
+                    </div>
+                </div>
+
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">
+                        <span class="iconify" data-icon="mdi:clock-outline"></span>
+                    </div>
+                    <div class="contact-detail-text">
+                        <strong>Jam Operasional</strong>
+                        <span>Setiap hari, 08:00 — 17:00 WIB</span>
+                    </div>
+                </div>
+
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">
+                        <span class="iconify" data-icon="mdi:phone"></span>
+                    </div>
+                    <div class="contact-detail-text">
+                        <strong>Telepon</strong>
+                        <span>+62 812-XXXX-XXXX</span>
+                    </div>
+                </div>
+
+                <div class="contact-socials">
+                    <a href="#" class="social-btn" title="Facebook">
+                        <span class="iconify" data-icon="mdi:facebook"></span>
+                    </a>
+                    <a href="#" class="social-btn" title="Instagram">
+                        <span class="iconify" data-icon="mdi:instagram"></span>
+                    </a>
+                    <a href="#" class="social-btn" title="WhatsApp">
+                        <span class="iconify" data-icon="mdi:whatsapp"></span>
+                    </a>
+                    <a href="#" class="social-btn" title="YouTube">
+                        <span class="iconify" data-icon="mdi:youtube"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper reveal reveal-delay-2">
+                <h3>Kirim Pesan</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Pesan</label>
+                        <textarea id="message" name="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">
+                        <span class="iconify" data-icon="mdi:send"></span>
+                        Kirim Pesan
+                    </button>
+                </form>
+            </div>
+        </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2024 Wisata Air Terjun C2. Semua Hak Dilindungi. dev by Elnathan</p>
+        <div class="footer-logo">
+            <span class="iconify" data-icon="mdi:waterfall" style="font-size: 1.2rem;"></span>
+            Air Terjun C2
+        </div>
+        <p>&copy; 2024 Wisata Air Terjun C2. Semua Hak Dilindungi.</p>
+        <p class="dev">Dev by <a href="#">Elnathan</a></p>
     </footer>
 
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">
+            <span class="iconify" data-icon="mdi:close"></span>
+        </button>
+        <img id="lightboxImg" src="" alt="Preview">
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast">
+        <span class="iconify" data-icon="mdi:check-circle"></span>
+        <span id="toastMsg">Pesan terkirim!</span>
+    </div>
+
     <script>
-        // JavaScript
-        document.getElementById('exploreBtn').addEventListener('click', function() {
-            window.scrollTo({
-                top: document.getElementById('about').offsetTop,
-                behavior: 'smooth'
+        // ===== PARTICLES =====
+        function createParticles() {
+            const container = document.getElementById('heroParticles');
+            // Leaves
+            for (let i = 0; i < 15; i++) {
+                const leaf = document.createElement('div');
+                leaf.classList.add('leaf');
+                leaf.style.left = Math.random() * 100 + '%';
+                leaf.style.animationDuration = (8 + Math.random() * 12) + 's';
+                leaf.style.animationDelay = Math.random() * 10 + 's';
+                leaf.style.width = (8 + Math.random() * 10) + 'px';
+                leaf.style.height = leaf.style.width;
+                const hue = 100 + Math.random() * 40;
+                leaf.style.background = `hsl(${hue}, 70%, 55%)`;
+                container.appendChild(leaf);
+            }
+            // Water drops
+            for (let i = 0; i < 20; i++) {
+                const drop = document.createElement('div');
+                drop.classList.add('water-drop');
+                drop.style.left = Math.random() * 100 + '%';
+                drop.style.top = (10 + Math.random() * 30) + '%';
+                drop.style.animationDuration = (2 + Math.random() * 4) + 's';
+                drop.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(drop);
+            }
+        }
+        createParticles();
+
+        // ===== NAVBAR SCROLL =====
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // ===== MOBILE TOGGLE =====
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            const icon = mobileToggle.querySelector('.iconify');
+            if (navLinks.classList.contains('open')) {
+                icon.setAttribute('data-icon', 'mdi:close');
+            } else {
+                icon.setAttribute('data-icon', 'mdi:menu');
+            }
+        });
+
+        // Close mobile menu on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                mobileToggle.querySelector('.iconify').setAttribute('data-icon', 'mdi:menu');
             });
         });
 
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Terima kasih telah menghubungi kami! Pesan Anda telah terkirim.');
-            this.reset();
+        // ===== ACTIVE NAV LINK =====
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const top = section.offsetTop - 120;
+                if (window.scrollY >= top) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.querySelectorAll('a:not(.nav-cta)').forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === '#' + current) {
+                    a.classList.add('active');
+                }
+            });
         });
 
-        function moveLocation() {
-            // Ambil elemen dengan kelas "location-icon"
-            const locationIcon = document.querySelector('.location-icon');
+        // ===== SCROLL REVEAL =====
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-            // Tentukan posisi baru secara acak di dalam layar
-            const maxWidth = window.innerWidth;
-            const maxHeight = window.innerHeight;
+        revealElements.forEach(el => revealObserver.observe(el));
 
-            const randomX = Math.random() * maxWidth;
-            const randomY = Math.random() * maxHeight;
+        // ===== COUNTER ANIMATION =====
+        const counters = document.querySelectorAll('.stat-number[data-count]');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.getAttribute('data-count'));
+                    const suffix = el.getAttribute('data-suffix') || '';
+                    const duration = 2000;
+                    const start = performance.now();
 
-            // Pindahkan lokasi ke posisi acak
-            locationIcon.style.left = `${randomX}px`;
-            locationIcon.style.top = `${randomY}px`;
+                    function update(now) {
+                        const elapsed = now - start;
+                        const progress = Math.min(elapsed / duration, 1);
+                        // Ease out cubic
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        const current = Math.floor(eased * target);
+                        el.textContent = current.toLocaleString('id-ID') + suffix;
+                        if (progress < 1) {
+                            requestAnimationFrame(update);
+                        } else {
+                            el.textContent = target.toLocaleString('id-ID') + suffix;
+                        }
+                    }
+                    requestAnimationFrame(update);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(c => counterObserver.observe(c));
+
+        // ===== LIGHTBOX =====
+        function openLightbox(card) {
+            const img = card.querySelector('.gallery-card-img img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            lightboxImg.src = img.src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // ===== TOAST =====
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3500);
+        }
+
+        // ===== CONTACT FORM =====
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showToast('Terima kasih! Pesan Anda telah berhasil terkirim.');
+            this.reset();
+        });
     </script>
 </body>
 
